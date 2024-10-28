@@ -1,6 +1,6 @@
-# Playful Sparkle - Google Analytics (GA4) Extension for OpenCart 4
+# Playful Sparkle - Google Analytics (GA4) Extension for OpenCart 3
 
-The ***Playful Sparkle - Google Analytics (GA4) Extension*** for OpenCart 4 is a powerful tool designed to integrate Google Analytics 4 seamlessly into OpenCart websites, even for users without coding skills. This extension simplifies the process of tracking website performance and customer interactions, providing insights into user behaviors, traffic sources, and shopping trends directly within GA4. With features like easy installation, event tracking, and real-time data synchronization, this extension empowers users to make data-driven decisions, improve their online store’s performance, and enhance customer experience—all without needing technical expertise.
+The ***Playful Sparkle - Google Analytics (GA4) Extension*** for OpenCart 3 is a powerful tool designed to integrate Google Analytics 4 seamlessly into OpenCart websites, even for users without coding skills. This extension simplifies the process of tracking website performance and customer interactions, providing insights into user behaviors, traffic sources, and shopping trends directly within GA4. With features like easy installation, event tracking, and real-time data synchronization, this extension empowers users to make data-driven decisions, improve their online store’s performance, and enhance customer experience—all without needing technical expertise.
 
 ### What is Google Analytics (GA4)?
 Google Analytics 4 (GA4) is the newest version of Google’s powerful tool for tracking and understanding website and app activity. Unlike previous versions, GA4 uses machine learning to provide insights into customer behavior across different devices and platforms. It’s designed to help businesses see what’s working, make data-driven decisions, and improve the user experience easily.
@@ -35,4 +35,4 @@ Download the latest **Playful Sparkle - Google Analytics (GA4)** release from th
 
 ## Support & Feedback
 
-For support or any inquiries regarding the extension, feel free to open an issue on this repository or reach out via email at [%s](mailto:%s).
+For support or any inquiries regarding the extension, feel free to open an issue on this repository or reach out via email at [support@playfulsparkle.com](mailto:support@playfulsparkle.com).
