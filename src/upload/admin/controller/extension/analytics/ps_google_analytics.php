@@ -1,7 +1,7 @@
 <?php
 class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
 {
-     /**
+    /**
      * @var string The support email address.
      */
     const EXTENSION_EMAIL = 'support@playfulsparkle.com';
@@ -89,10 +89,12 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
-        if (!isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
-            $this->error['google_tag_id'] = $this->language->get('error_google_tag_id');
-        } elseif (preg_match('/^G-[A-Z0-9]+$/', $this->request->post['analytics_ps_google_analytics_google_tag_id']) !== 1) {
-            $this->error['google_tag_id'] = $this->language->get('error_google_tag_id_invalid');
+        if (!$this->error) {
+            if (!isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
+                $this->error['google_tag_id'] = $this->language->get('error_google_tag_id');
+            } elseif (preg_match('/^G-[A-Z0-9]+$/', $this->request->post['analytics_ps_google_analytics_google_tag_id']) !== 1) {
+                $this->error['google_tag_id'] = $this->language->get('error_google_tag_id_invalid');
+            }
         }
 
         return !$this->error;
