@@ -63,9 +63,9 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
         $data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=analytics', true);
 
         if (isset($this->request->post['analytics_ps_google_analytics_status'])) {
-            $data['analytics_ps_google_analytics_status'] = $this->request->post['analytics_ps_google_analytics_status'];
+            $data['analytics_ps_google_analytics_status'] = (bool) $this->request->post['analytics_ps_google_analytics_status'];
         } else {
-            $data['analytics_ps_google_analytics_status'] = $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_status', $this->request->get['store_id']);
+            $data['analytics_ps_google_analytics_status'] = (bool) $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_status', $this->request->get['store_id']);
         }
 
         if (isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
