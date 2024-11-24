@@ -68,6 +68,12 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
             $data['analytics_ps_google_analytics_status'] = (bool) $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_status', $this->request->get['store_id']);
         }
 
+        if (isset($this->request->post['analytics_ps_google_analytics_debug_mode'])) {
+            $data['analytics_ps_google_analytics_debug_mode'] = (bool) $this->request->post['analytics_ps_google_analytics_debug_mode'];
+        } else {
+            $data['analytics_ps_google_analytics_debug_mode'] = (bool) $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_debug_mode', $this->request->get['store_id']);
+        }
+
         if (isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
             $data['analytics_ps_google_analytics_google_tag_id'] = $this->request->post['analytics_ps_google_analytics_google_tag_id'];
         } else {
@@ -90,9 +96,9 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
         }
 
         if (!$this->error) {
-            if (!isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
+            if (empty($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
                 $this->error['google_tag_id'] = $this->language->get('error_google_tag_id');
-            } elseif (preg_match('/^G-[A-Z0-9]+$/', $this->request->post['analytics_ps_google_analytics_google_tag_id']) !== 1) {
+            } elseif (preg_match('/^G-[A-Z0-9]{10}$/', $this->request->post['analytics_ps_google_analytics_google_tag_id']) !== 1) {
                 $this->error['google_tag_id'] = $this->language->get('error_google_tag_id_invalid');
             }
         }
