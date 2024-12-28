@@ -75,9 +75,9 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
         }
 
         if (isset($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
-            $data['analytics_ps_google_analytics_google_tag_id'] = $this->request->post['analytics_ps_google_analytics_google_tag_id'];
+            $data['analytics_ps_google_analytics_google_tag_id'] = (string) $this->request->post['analytics_ps_google_analytics_google_tag_id'];
         } else {
-            $data['analytics_ps_google_analytics_google_tag_id'] = $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_google_tag_id', $this->request->get['store_id']);
+            $data['analytics_ps_google_analytics_google_tag_id'] = (string) $this->model_setting_setting->getSettingValue('analytics_ps_google_analytics_google_tag_id', $this->request->get['store_id']);
         }
 
         $data['text_contact'] = sprintf($this->language->get('text_contact'), self::EXTENSION_EMAIL, self::EXTENSION_EMAIL, self::EXTENSION_DOC);
