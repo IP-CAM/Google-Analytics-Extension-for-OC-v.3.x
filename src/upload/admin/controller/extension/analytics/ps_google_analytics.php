@@ -22,6 +22,8 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
         $this->load->model('setting/setting');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+            $this->request->post['analytics_ps_google_analytics_google_tag_id'] = strtoupper($this->request->post['analytics_ps_google_analytics_google_tag_id']);
+
             $this->model_setting_setting->editSetting('analytics_ps_google_analytics', $this->request->post, $this->request->get['store_id']);
 
             $this->session->data['success'] = $this->language->get('text_success');
@@ -98,7 +100,7 @@ class ControllerExtensionAnalyticsPsGoogleAnalytics extends Controller
         if (!$this->error) {
             if (empty($this->request->post['analytics_ps_google_analytics_google_tag_id'])) {
                 $this->error['google_tag_id'] = $this->language->get('error_google_tag_id');
-            } elseif (preg_match('/^G-[A-Z0-9]{10}$/', $this->request->post['analytics_ps_google_analytics_google_tag_id']) !== 1) {
+            } elseif (preg_match('/^G-[A-Z0-9]{10}$/', strtoupper($this->request->post['analytics_ps_google_analytics_google_tag_id'])) !== 1) {
                 $this->error['google_tag_id'] = $this->language->get('error_google_tag_id_invalid');
             }
         }
